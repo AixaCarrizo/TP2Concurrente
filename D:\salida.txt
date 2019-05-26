@@ -1,0 +1,100 @@
+2019-05-25T20:16:01.770635 - El buffer 1 tiene 0 elementos
+2019-05-25T20:16:01.833489 - El buffer 2 tiene 0 elementos
+ - El estado del consumidor 0 es TIMED_WAITING
+ - El estado del consumidor 1 es WAITING
+ - El estado del consumidor 2 es WAITING
+ - El estado del consumidor 3 es WAITING
+ - El estado del consumidor 4 es WAITING
+ - El estado del consumidor 5 es WAITING
+ - El estado del consumidor 6 es WAITING
+ - El estado del consumidor 7 es WAITING
+2019-05-25T20:16:06.874936 - El buffer 1 tiene 0 elementos
+2019-05-25T20:16:06.875259 - El buffer 2 tiene 0 elementos
+ - El estado del consumidor 0 es WAITING
+ - El estado del consumidor 1 es WAITING
+ - El estado del consumidor 2 es WAITING
+ - El estado del consumidor 3 es WAITING
+ - El estado del consumidor 4 es WAITING
+ - El estado del consumidor 5 es WAITING
+ - El estado del consumidor 6 es WAITING
+ - El estado del consumidor 7 es WAITING
+2019-05-25T20:16:11.875850 - El buffer 1 tiene 0 elementos
+2019-05-25T20:16:11.876137 - El buffer 2 tiene 0 elementos
+ - El estado del consumidor 0 es WAITING
+ - El estado del consumidor 1 es WAITING
+ - El estado del consumidor 2 es WAITING
+ - El estado del consumidor 3 es WAITING
+ - El estado del consumidor 4 es WAITING
+ - El estado del consumidor 5 es WAITING
+ - El estado del consumidor 6 es WAITING
+ - El estado del consumidor 7 es WAITING
+2019-05-25T20:16:16.876602 - El buffer 1 tiene 0 elementos
+2019-05-25T20:16:16.876849 - El buffer 2 tiene 0 elementos
+ - El estado del consumidor 0 es WAITING
+ - El estado del consumidor 1 es WAITING
+ - El estado del consumidor 2 es WAITING
+ - El estado del consumidor 3 es WAITING
+ - El estado del consumidor 4 es WAITING
+ - El estado del consumidor 5 es WAITING
+ - El estado del consumidor 6 es WAITING
+ - El estado del consumidor 7 es WAITING
+2019-05-25T20:16:21.877287 - El buffer 1 tiene 0 elementos
+2019-05-25T20:16:21.877434 - El buffer 2 tiene 0 elementos
+ - El estado del consumidor 0 es WAITING
+ - El estado del consumidor 1 es WAITING
+ - El estado del consumidor 2 es WAITING
+ - El estado del consumidor 3 es WAITING
+ - El estado del consumidor 4 es WAITING
+ - El estado del consumidor 5 es WAITING
+ - El estado del consumidor 6 es WAITING
+ - El estado del consumidor 7 es WAITING
+2019-05-25T20:16:26.877848 - El buffer 1 tiene 0 elementos
+2019-05-25T20:16:26.878010 - El buffer 2 tiene 0 elementos
+ - El estado del consumidor 0 es WAITING
+ - El estado del consumidor 1 es WAITING
+ - El estado del consumidor 2 es WAITING
+ - El estado del consumidor 3 es TIMED_WAITING
+ - El estado del consumidor 4 es WAITING
+ - El estado del consumidor 5 es WAITING
+ - El estado del consumidor 6 es WAITING
+ - El estado del consumidor 7 es WAITING
+2019-05-25T20:16:31.878496 - El buffer 1 tiene 0 elementos
+2019-05-25T20:16:31.878630 - El buffer 2 tiene 0 elementos
+ - El estado del consumidor 0 es WAITING
+ - El estado del consumidor 1 es WAITING
+ - El estado del consumidor 2 es WAITING
+ - El estado del consumidor 3 es TIMED_WAITING
+ - El estado del consumidor 4 es WAITING
+ - El estado del consumidor 5 es WAITING
+ - El estado del consumidor 6 es WAITING
+ - El estado del consumidor 7 es TIMED_WAITING
+2019-05-25T20:16:36.878848 - El buffer 1 tiene 0 elementos
+2019-05-25T20:16:36.878971 - El buffer 2 tiene 0 elementos
+ - El estado del consumidor 0 es TIMED_WAITING
+ - El estado del consumidor 1 es WAITING
+ - El estado del consumidor 2 es WAITING
+ - El estado del consumidor 3 es WAITING
+ - El estado del consumidor 4 es WAITING
+ - El estado del consumidor 5 es WAITING
+ - El estado del consumidor 6 es TIMED_WAITING
+ - El estado del consumidor 7 es WAITING
+2019-05-25T20:16:41.879311 - El buffer 1 tiene 0 elementos
+2019-05-25T20:16:41.879535 - El buffer 2 tiene 0 elementos
+ - El estado del consumidor 0 es TERMINATED
+ - El estado del consumidor 1 es TERMINATED
+ - El estado del consumidor 2 es TERMINATED
+ - El estado del consumidor 3 es TERMINATED
+ - El estado del consumidor 4 es TERMINATED
+ - El estado del consumidor 5 es TERMINATED
+ - El estado del consumidor 6 es TERMINATED
+ - El estado del consumidor 7 es TERMINATED
+2019-05-25T20:16:46.880017 - El buffer 1 tiene 0 elementos
+2019-05-25T20:16:46.880146 - El buffer 2 tiene 0 elementos
+ - El estado del consumidor 0 es TERMINATED
+ - El estado del consumidor 1 es TERMINATED
+ - El estado del consumidor 2 es TERMINATED
+ - El estado del consumidor 3 es TERMINATED
+ - El estado del consumidor 4 es TERMINATED
+ - El estado del consumidor 5 es TERMINATED
+ - El estado del consumidor 6 es TERMINATED
+ - El estado del consumidor 7 es TERMINATED
