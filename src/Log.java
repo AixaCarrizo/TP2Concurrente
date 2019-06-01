@@ -7,10 +7,10 @@ import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 
 public class Log implements Runnable{
-  private String ruta = "D:\\salida.txt";
-  private String contenido="";
-    private String estadoBuff="";
-    private String estadoCon="";
+      private String ruta = "D:\\salida.txt";
+      private String contenido="";
+      private String estadoBuff="";
+      private String estadoCon="";
 
 
      Thread[] consumidores ;

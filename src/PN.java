@@ -16,48 +16,52 @@ public class PN {
 
     public void init(){
 
-        this.m = new int[]{1, 1, 8, 0, 10, 15, 0, 0, 0, 0, 5, 0}; //Vector de marcado inicial
+        this.m = new int[]{8, 0, 15, 10, 0, 0, 0, 0, 5, 0}; //Vector de marcado inicial
 
         /**
-         * m0=Disp. Buffer1
-         * m1=Disp. Buffer2
-         * m2=Consumidores
-         * m4=Cap. Buffer1
-         * m5=Cap. Buffer2
-         * m10=Productores
+         * m0: consumidores esperando
+         * m1: consumidores en b1
+         * m2: lugar libre en B2
+         * m3: lugar libre B1
+         * m4: consumiendo en B2
+         * m5: produciendo en B2
+         * m6: BUFFER2
+         * m7: produciendo en B1
+         * m8: productor esperando
+         * m9: BUFFER1
          */
+
 
         this.S = new int[]{0, 0, 0, 0, 0, 0, 0, 0}; //Vector de disparo
 
         /**
-         * Buffer1 (10):
+         * Buffer1 (10 lugares):
          *
-         * Producir: T2
-         * Term. Producir: T3
-         * Consumir: T4
-         * Term. Consumir: T5
+         * T0: Empieza a consumir en b1
+         * T1: Empieza a producir en b1
+         * T5: Terminó de consumir en b1
+         * T6: Producí en b1
          *
-         * Buffer2 (15):
+         * Buffer2 (15 lugares):
          *
-         * Producir: T1
-         * Term. Producir: T7
-         * Consumir: T0
-         * Term. C0nsumir: T6
+         * T2 : Empieza a producir en b2
+         * T3: Empieza a consumir en b2
+         * T4: Terminó de consumir en b2
+         * T7: Producí en b2
+         *
          */
 
 
-        this.w = new int[][]{{0, 0, -1, 1, -1, 1, 0, 0},   // 1
-                             {-1, -1, 0, 0, 0, 0, 1, 1},    // 2
-                             {-1, 0, 0, 0, -1, 1, 1, 0},    // 3
-                             {1, 0, 0, 0, 0, 0, -1, 0},     // 4
-                             {0, 0, -1, 0, 0, 1, 0, 0},
-                             {0, -1, 0, 0, 0, 0, 1, 0},
-                             {0, 0, 0, 0, 1, -1, 0, 0},     // 6
-                             {0, 0, 1, -1, 0, 0, 0, 0},     // 7
-                             {0, 0, 0, 1, -1, 0, 0, 0},     // 8
-                             {0, 1, 0, 0, 0, 0, 0, -1},     // 9
-                             {0, -1, -1, 1, 0, 0, 0, 1},    // 10
-                             {-1, 0, 0, 0, 0, 0, 0, 1}};    //11
+        this.w = new int[][]{{-1, 0, 0, -1, 1, 1, 0, 0},   // 1
+                             {1, 0, 0, 0, 0, -1, 0, 0},    // 2
+                             {0, 0, -1, 0, 1, 0, 0, 0},    // 3
+                             {0, -1, 0, 0, 0, 1, 0, 0},     // 4
+                             {0, 0, 0, 1, -1, 0, 0, 0},
+                             {0, 0, 1, 0, 0, 0, 0, -1},
+                             {0, 0, 0, -1, 0, 0, 0, 1},     // 6
+                             {0, 1, 0, 0, 0, 0, -1, 0},     // 7
+                             {0, -1, -1, 0, 0, 0, 1, 1},     // 8
+                             {-1, 0, 0, 0, 0, 0, 1, 0}};     // 9
     }
 
     public void putShot(int index){   //Coloca la transicion a disparar en el vector de disparo. Dispara de a una
@@ -70,7 +74,10 @@ public class PN {
 
         putShot(index);
 
+
+
         int[] auxVector = new int[m.length];
+
 
         for (int i = 0; i < w.length; i++) {       //Multiplica las matrices
 
@@ -85,6 +92,7 @@ public class PN {
             mPrima[i] = m[i] + auxVector[i];    //Sumo para obtener el nuevo vector de marcado
 
             if (mPrima[i] == -1) return false;
+
         }
 
         this.m=mPrima;
