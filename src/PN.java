@@ -31,7 +31,6 @@ public class PN {
          * m9: BUFFER1
          */
 
-
         this.S = new int[]{0, 0, 0, 0, 0, 0, 0, 0}; //Vector de disparo
 
         /**
@@ -51,7 +50,6 @@ public class PN {
          *
          */
 
-
         this.w = new int[][]{{-1, 0, 0, -1, 1, 1, 0, 0},   // 1
                              {1, 0, 0, 0, 0, -1, 0, 0},    // 2
                              {0, 0, -1, 0, 1, 0, 0, 0},    // 3
@@ -64,35 +62,17 @@ public class PN {
                              {-1, 0, 0, 0, 0, 0, 1, 0}};     // 9
     }
 
-    public void putShot(int index){   //Coloca la transicion a disparar en el vector de disparo. Dispara de a una
+    public boolean isPos(int index) {   //Mediante la ecuacion de la PN devuelve un boolean que indica si se puede disparar la transicion
 
         this.S = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
         S[index] = 1;
-    }
-
-    public boolean isPos(int index) {   //Mediante la ecuacion de la PN devuelve un boolean que indica si se puede disparar la transicion
-
-        putShot(index);
-
-
-
-        int[] auxVector = new int[m.length];
-
-
-        for (int i = 0; i < w.length; i++) {       //Multiplica las matrices
-
-            int auxFila = 0;
-            auxFila += w[i][index] * S[index];
-            auxVector[i] = auxFila;
-        }
 
         int[] mPrima = new int[m.length];
 
         for (int i = 0; i < m.length; i++) {   //Si algun numero del nuevo vector de marcado es negativo, no puedo dispararla
-            mPrima[i] = m[i] + auxVector[i];    //Sumo para obtener el nuevo vector de marcado
+            mPrima[i] = m[i] + w[i][index];    //Sumo para obtener el nuevo vector de marcado
 
             if (mPrima[i] == -1) return false;
-
         }
 
         this.m=mPrima;

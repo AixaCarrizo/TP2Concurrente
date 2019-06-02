@@ -8,7 +8,7 @@ public class Buffer {
 
     public Buffer() {
 
-        cola = new ArrayDeque<String>();
+        cola = new ArrayDeque<>();
         cont = 0;
         //Se le podria pasar como parametro el tamaño que quiero que tenga la cola
         //Por defecto es de 16.
