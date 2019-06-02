@@ -24,9 +24,16 @@ public class Consumidor extends Thread {
 
         while(true) {
 
-            switch (monitor.shoot(0)) {
+            double choose = Math.random()*100 +1;
+            int index = 0;
+
+            if(choose<50) index = 0;
+            else index = 3;
+
+            switch (monitor.shoot(index)) {
 
                 case 1:
+                case 0:
 
                     try {
                         sleep(50);
@@ -44,6 +51,7 @@ public class Consumidor extends Thread {
                     break;
 
                 case 2:
+                case 3:
 
                     try {
                         sleep(50);

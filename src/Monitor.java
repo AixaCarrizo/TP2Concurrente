@@ -9,39 +9,42 @@ public class Monitor {
 
     public synchronized int shoot(int index){  //Dispara una transicion (index)
 
-        while (!pn.isPos(index)){
+        while (!pn.isPos(index)) {
 
-            if (index == 0) {
+            switch (index) {
 
-                if(pn.isPos(3)) return 2;
-                else {
-                    try {
+                case 0:
+                    if (pn.isPos(3)) return 2;
+                    break;
 
-                        if (contProd == 50000 && contCons == 50000) { //Esto solo le interesa al Consumidor. El Productor muere solo.
-                            notifyAll();
-                            return -1;
-                        }
+                case 3:
+                    if (pn.isPos(0)) return 1;
+                    break;
 
-                        wait();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                case 1:
+                    if (pn.isPos(2)) return 2;
+                    break;
+
+                case 2:
+                    if (pn.isPos(1)) return 1;
+                    break;
+            }
+
+            try {
+
+                if (contProd == 50000 && contCons == 50000) { //Esto solo le interesa al Consumidor. El Productor muere solo.
+                    notifyAll();
+                    return -1;
                 }
-            } else{
-
-                if(pn.isPos(2)) return 2;
-                else {
-
-                    try {
-                        wait();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
+
         notifyAll();
-        return 1;
+
+        return index; //Logro agregar en el buffer que intentó incialmente
     }
 
     public synchronized void agregar(int idBuffer){

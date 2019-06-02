@@ -26,38 +26,48 @@ public class Productor extends Thread {
         int cont2 = 0;
         while(cont<10000) {
 
-            if(monitor.shoot(1)==1){
+            double choose = Math.random()*100 +1;
+            int index = 0;
 
-                try {
-                    sleep(50);
-                    semaphore1.acquire();
+            if(choose<50) index = 1;
+            else index = 2;
 
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+            switch (monitor.shoot(index)){
 
-                buffer1.add(Integer.toString(id));
-                semaphore1.release();
-                monitor.agregar(1);
-            } else{
+                case 1:
+                    try {
+                        sleep(50);
+                        semaphore1.acquire();
 
-                try {
-                    sleep(50);
-                    semaphore2.acquire();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
 
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                    buffer1.add(Integer.toString(id));
+                    semaphore1.release();
+                    monitor.agregar(1);
+                    break;
 
-                buffer2.add(Integer.toString(id));
-                semaphore2.release();
-                monitor.agregar(2);
+                case 2:
+                    try {
+                        sleep(50);
+                        semaphore2.acquire();
+
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                    buffer2.add(Integer.toString(id));
+                    semaphore2.release();
+                    monitor.agregar(2);
+                    break;
             }
+
             cont++;
             cont2++;
 
             if(cont2==500) {
-                System.out.println(cont);
+                System.out.println("El prductor " + id + " ya lleva: " + cont);
                 cont2=0;
             }
         }
