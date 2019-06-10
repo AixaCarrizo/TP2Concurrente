@@ -32,44 +32,48 @@ public class Productor extends Thread {
             if(choose<50) index = 1;
             else index = 2;
 
-            switch (monitor.shoot(index)){
+            monitor.meter(1);
+            monitor.meter(6);
+
+/*
+            switch (monitor.meter(index)){
 
                 case 1:
-                    try {
-                        sleep(50);
-                        semaphore1.acquire();
-
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-                    buffer1.add(Integer.toString(id));
-                    semaphore1.release();
-                    monitor.agregar(1);
+//                    try {
+//                        sleep(50);
+//                        semaphore1.acquire();
+//
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                    buffer1.add(Integer.toString(id));
+//                    semaphore1.release();
+                    monitor.meter(6);
                     break;
 
                 case 2:
-                    try {
-                        sleep(50);
-                        semaphore2.acquire();
-
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-                    buffer2.add(Integer.toString(id));
-                    semaphore2.release();
-                    monitor.agregar(2);
+//                    try {
+//                        sleep(50);
+//                        semaphore2.acquire();
+//
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                    buffer2.add(Integer.toString(id));
+//                    semaphore2.release();
+                    monitor.meter(7);
                     break;
             }
-
+*/
             cont++;
             cont2++;
 
-            if(cont2==500) {
-                System.out.println("El prductor " + id + " ya lleva: " + cont);
-                cont2=0;
-            }
+//            if(cont2==100) {
+               // System.out.println("El prductor " + id + " ya lleva: " + cont);
+//                cont2=0;
+//            }
         }
         System.out.println("Soy un productor y TERMINE: " + id);
     }

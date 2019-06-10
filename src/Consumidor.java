@@ -30,49 +30,61 @@ public class Consumidor extends Thread {
             if(choose<50) index = 0;
             else index = 3;
 
-            switch (monitor.shoot(index)) {
+            int aux = 0;
+
+            aux = monitor.consumir(0);
+            aux = monitor.consumir(5);
+
+            if (aux==-1){
+                System.out.println("Soy un consumidor y TERMINE " + id);
+                return;
+            }
+
+            /*
+
+            switch (monitor.consumir(index)) {
 
                 case 1:
                 case 0:
 
-                    try {
-                        sleep(50);
+//                    try {
+//                        sleep(50);
+//
+//                        semaphore1.acquire();
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                    buffer1.remove();
+//
+//                    semaphore1.release();
 
-                        semaphore1.acquire();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-                    buffer1.remove();
-
-                    semaphore1.release();
-
-                    monitor.quitar(1);
+                    monitor.consumir(5);
                     break;
 
                 case 2:
                 case 3:
+//
+//                    try {
+//                        sleep(50);
+//
+//                        semaphore2.acquire();
+//
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                    buffer2.remove();
+//
+//                    semaphore2.release();
 
-                    try {
-                        sleep(50);
-
-                        semaphore2.acquire();
-
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-                    buffer2.remove();
-
-                    semaphore2.release();
-
-                    monitor.quitar(2);
+                    monitor.consumir(4);
                     break;
 
                 case -1:
                     System.out.println("Soy un consumidor y TERMINE " + id);
                     return;
-            }
+            }*/
         }
     }
 }

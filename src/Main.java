@@ -16,14 +16,14 @@ public class Main{
 
         for(int i=0; i<5; i++)
         {
-            Thread c =  new Thread(new Productor(i, monitor, buffer1, buffer2, semaphore1, semaphore2)); //Creo un productor y un consumidor
+            Thread c =  new Productor(i, monitor, buffer1, buffer2, semaphore1, semaphore2); //Creo un productor y un consumidor
            prod[i] =  c;
            c.start();
         }
 
         for(int j=6 ;j<14; j++)
         {
-            Thread p =  new Thread(new Consumidor(j, monitor, buffer1, buffer2, semaphore1, semaphore2)); //Creo un productor y un consumidor
+            Thread p =  new Consumidor(j, monitor, buffer1, buffer2, semaphore1, semaphore2); //Creo un productor y un consumidor
             cons[j-6] = p;
            p.start();
         }

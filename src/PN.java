@@ -77,6 +77,9 @@ public class PN {
 
         this.m=mPrima;
 
+        //for(int item:m) System.out.println(item);
+
+
         return true;   //Si ninguno es negativo, puedo dispararla
     }
 }
